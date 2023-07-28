@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/otpbg"
+              android:orientation="vertical"
+              tools:context=".otp.OtpActivity">
+    <TextView
+            android:id="@+id/otpTitle"
+            android:fontFamily="@font/font"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:layout_marginTop="400dp"
+            android:textSize="52sp"
+            android:textStyle="bold"
+            android:paddingBottom="40dp"
+            android:text="Enter the Verification Code \n Incoming to Your Email !" />
+
+    <com.chaos.view.PinView
+            android:id="@+id/otpInput"
+            style="@style/PinWidget.PinView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:cursorVisible="true"
+            android:fontFamily="@font/font"
+            android:hint="OTP."
+            android:inputType="text"
+            android:itemBackground="@color/white"
+            android:padding="2dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:cursorWidth="2dp"
+            app:hideLineWhenFilled="true"
+            app:itemCount="6"
+            app:itemHeight="48dp"
+            app:itemRadius="4dp"
+            app:itemSpacing="0dp"
+            app:itemWidth="48dp"
+            app:lineColor="@color/black"
+            app:lineWidth="2dp"
+            app:viewType="rectangle" />
+
+    <com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
+            android:id="@+id/otpButton"
+            style="@style/loginButton"
+            app:spinning_bar_width="4dp"
+            app:spinning_bar_color="#FFF"
+            android:text="VERIFY"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/loginViewsMargin"
+            app:spinning_bar_padding="6dp"
+            app:initialCornerAngle="27dp"/>
+
+    <TextView
+            android:id="@+id/resendOtp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:paddingTop="40dp"
+            android:fontFamily="@font/font"
+            android:text="Resend Verfiy Code  " />
+
+
+    <ImageView
+            android:layout_alignParentLeft="true"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="340dp"
+            android:layout_gravity="end"
+            android:src="@drawable/go"
+            android:scaleX="-1"
+            android:layout_marginRight="11dp"
+            android:layout_marginBottom="30dp"
+            android:onClick="onLoginClick"
+            android:adjustViewBounds="false"/>
+
+</LinearLayout>

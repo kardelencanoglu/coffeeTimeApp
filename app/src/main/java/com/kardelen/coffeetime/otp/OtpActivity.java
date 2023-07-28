@@ -1,4 +1,4 @@
-package com.kardelen.coffeetime.login;
+package com.kardelen.coffeetime.otp;
 
 import android.content.Intent;
 import android.view.View;
@@ -8,34 +8,35 @@ import android.os.Bundle;
 import com.kardelen.coffeetime.MainActivity;
 import com.kardelen.coffeetime.R;
 import com.kardelen.coffeetime.Utils;
-import com.kardelen.coffeetime.otp.OtpActivity;
-import com.kardelen.coffeetime.splash.SplashScreen;
+import com.kardelen.coffeetime.login.LoginActivity;
+import com.kardelen.coffeetime.login.RegisterActivity;
 
-public class LoginActivity extends AppCompatActivity {
+public class OtpActivity extends AppCompatActivity {
 
-    Button cirLoginButton;
+    Button otpButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Utils.setUpFullscreen(getWindow().getDecorView());
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_otp);
 
-        cirLoginButton = findViewById(R.id.cirLoginButton);
-        cirLoginButton.setOnClickListener(new View.OnClickListener() {
+        otpButton = findViewById(R.id.otpButton);
+        otpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(LoginActivity.this, OtpActivity.class);
+                Intent i = new Intent(OtpActivity.this, MainActivity.class);
                 startActivity(i);
             }
         });
+
     }
 
     public void onLoginClick(View View){
-        startActivity(new Intent(this, RegisterActivity.class));
-        overridePendingTransition(R.anim.slide_in_right,R.anim.stay);
-
+        startActivity(new Intent(this, MainActivity.class));
+        overridePendingTransition(R.anim.slide_in_left,R.anim.stay);
     }
+
 
     @Override
     public void onBackPressed() {
